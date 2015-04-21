@@ -1,0 +1,57 @@
+O Programu :
+
+Program vznikl jako testovaci a hlavne ucici se aplikace pro programatora. Ma za ukol vytvorit databazi a naplnit ji daty. 
+Tuto databazi lze ulozit a nacist takze lze teoreticky ji i prakticky vyuzit
+
+Logická struktura programu
+
+výchozí balièek 	- 	START PROGRAMU - SWING
+balièek databaze	-	Osoba 			( objekt èlovìka s daty ) 		... trida objektu èlovìka
+					-	SeznamOsob 		( vrstva vlastnich dat )		...	trida s kolekci obsahujici seznam osob
+					-	Tabulka 		( Vrstva metod datové vrstvy )	...	
+balièek GUI.panel.tabulka	
+					-	TabulkaPanel 	( vrstva prezenèní )			...	gui zobrazeni
+balièek GUI.Dialog	-	DialogInfo			... info dialog s texty a obrazkem
+					-	DialogNovaOsoba		...	dialog s kontrolami pro vytvoreni objektu èlovìk a vložení do kolekce v seznamOsob
+balièek GUI.Frame	-	HlavniOkno			... Hlavní JFrame GUI
+					-	JMenuBarMuj			...	tøída øešící JMenu
+					-	PanelTlacitek		...	tøída panel tlacitek
+balièek kontroly.vstup.dialog 
+					-	MailFocus			...	kontrola na spravny mail
+					-	NarozeninyFocus		...	kontrola na datum narozeni
+					-	TelefonFocus		...	kontrola na telefon
+balièek texty		-	Text				... tøída obsahujici seznam všech Stringu v programu
+balièek udalosti	-	InfoDialog			...	info dialog s 
+					-	JFrameZmena			...	pomocna trida obsahujici pomocne metody pro JFrame
+					-	KonecProgramu		...	ukonèí celý program
+					-	MuziFiltr			...	tøída jenž provede vypnuti žen
+					-	NactiDatab			...	naète databazi ze souboru
+					-	NovaOsoba			...	vytvori novou osobu a ulozi do databaze
+					-	SmazDatab			...	vymaze celou databazi
+					-	SmazOsobu			...	smaže osobu z databaze(kolekce)
+					-	UlozDatab			...	uloží databazi do souboru
+					-	ZenaFiltr			...	tøída jenž provede vypnuti mužù
+					-	ZjisteniPolohy		... tøída umožnující zjisti pri vypnutych bunkach polohu radku na kterem kliknu
+					
+Nutne doprogramovat a bugs
+
+- aktivovani a deaktivovani buttonu																	....OK
+- odeberes dva uzivatele - hodi to vyjimku															....OK
+- kliknes na filtr kdyz neexistuje databaze hodi to vyjimku i v pripade kdy smazes databazi			....OK
+- smazes databazi odebiranim uzivatelu - zajistit													....OK
+- pokusit se nacist databazi a pokud dam stormo hodi to vyjimku										....OK
+- pri neuspesnem nacteni databaze to aktivuje buttony												....OK
+- po manualnim vymazanim uzivatelu a spustime filtry hodi to vyjimky								....OK
+- po smazani vsech uzivatelu po jednom je nutno vypnout buttony										....OK
+- po jednotlivem smazani uzivatelu, a nacteni databaze se aktivuje button smazat osobu				....OK
+- pri aktivovani noveho dialogu s nulovou velikosti databaze se aktivovali tlacitka					....OK
+- umoznuje se aktivovat vice dialogu na pri sobe													....OK(modal)
+- pri aktivaci noveho dialogu lze klikat na buttony ve framu - haze to vyjimky 						....OK(modal)
+- nutne upravit Menu s aktivovanim tlacitek															....OK
+- vytvorime-li databazi s jednim clovekem pak a pustim filtr jineho pohlavi tak to hodi vyjimku		....OK															
+- neni dobre naprogramovane nacteni pohlavi, i bez zadani to hodi zenu
+- vytvorily jsme osobu a smazali a Menu1 stale umoznuje zadat ulozit databazi						....OK
+- nefunguje spravne uprava vysky a hmotnosti osoby
+- po smazani osoby nebo upravy osoby je stale aktivni menu u osoby i bez vyberu
+- v *.jar to nezobrazuje logo
+- nutne pri vstupu overit vsechny vstupy a pri vymazani vstupu by focus mel zustat v danem Jtextfieldu
